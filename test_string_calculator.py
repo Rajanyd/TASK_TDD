@@ -33,6 +33,13 @@ class TestStringCalculator(unittest.TestCase):
             self.assertEqual(self.calculator.add("1,2,3"), 6)
         except Exception as e:
             print(f"Test Failed:- {e}")
+    
+    def test_5_newline_as_delimiter(self):
+        print("\nTest Case 5:- Newline as Delimiter")
+        try:
+            self.assertEqual(self.calculator.add("1\n2,3"), 6)
+        except Exception as e:
+            print(f"Test Failed:- {e}")
 
 if __name__ == '__main__':
     unittest.main()

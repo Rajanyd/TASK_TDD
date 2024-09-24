@@ -1,6 +1,9 @@
+import re
+
 class StringCalculator:
     def add(self, numbers: str) -> int:
         if not numbers:
             return 0
-        nums = map(int, numbers.split(','))
+        # Support commas and newlines as delimiters
+        nums = map(int, re.split(',|\n', numbers))
         return sum(nums)
