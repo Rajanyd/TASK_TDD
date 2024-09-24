@@ -48,5 +48,23 @@ class TestStringCalculator(unittest.TestCase):
         except Exception as e:
             print(f"Test Failed:- {e}")
 
+    def test_7_negative_numbers_raise_exception(self):
+        print("\nTest Case 7:- Negative Numbers Raise Exception")
+        try:
+            with self.assertRaises(ValueError) as context:
+                self.calculator.add("1,-2")
+            self.assertEqual(str(context.exception), "negative numbers not allowed: -2")
+        except Exception as e:
+            print(f"Test Failed :- {e}")
+    
+    def test_8_multiple_negative_numbers_raise_exception(self):
+        print("\nTest Case 8:- Multiple Negative Numbers Raise Exception")
+        try:
+            with self.assertRaises(ValueError) as context:
+                self.calculator.add("-1,-2,3")
+            self.assertEqual(str(context.exception), "negative numbers not allowed: -1,-2")
+        except Exception as e:
+            print(f"Test Failed:- {e}")
+
 if __name__ == '__main__':
     unittest.main()
