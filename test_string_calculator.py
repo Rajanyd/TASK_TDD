@@ -41,5 +41,12 @@ class TestStringCalculator(unittest.TestCase):
         except Exception as e:
             print(f"Test Failed:- {e}")
 
+    def test_6_custom_delimiter(self):
+        print("\nTest Case 6:- Custom Delimiter")
+        try:
+            self.assertEqual(self.calculator.add("//;\n1;2"), 3)
+        except Exception as e:
+            print(f"Test Failed:- {e}")
+
 if __name__ == '__main__':
     unittest.main()
