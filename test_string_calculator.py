@@ -20,5 +20,12 @@ class TestStringCalculator(unittest.TestCase):
         except Exception as e:
             print(f"Test Failed:- {e}")
 
+    def test_3_two_numbers_comma_delimited(self):
+        print("\nTest Case 3:- Two Numbers Comma Delimited")
+        try:
+            self.assertEqual(self.calculator.add("1,2"), 3)
+        except Exception as e:
+            print(f"Test Failed:- {e}")
+
 if __name__ == '__main__':
     unittest.main()
